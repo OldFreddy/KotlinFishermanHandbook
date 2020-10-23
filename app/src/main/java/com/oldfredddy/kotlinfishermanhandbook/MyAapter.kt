@@ -41,7 +41,13 @@ class MyAdapter (listArray:ArrayList<ListItem>, context: Context): RecyclerView.
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var listItem = listArrarR.get(position)
+        val listItem = listArrarR[position]
         holder.bind(listItem,contextR)
+    }
+
+    fun updateAdapter(listArray: List<ListItem>){
+        listArrarR.clear()
+        listArrarR.addAll(listArray)
+        notifyDataSetChanged()
     }
 }
